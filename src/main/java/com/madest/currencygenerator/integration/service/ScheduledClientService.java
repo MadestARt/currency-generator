@@ -23,20 +23,20 @@ public class ScheduledClientService {
     private final APIKeyProperties apiKeyProperties;
 
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 120000)
     void addFreshCurrencyRates() {
         log.info("Scheduled client is sending HTTP request to {}",CURRENCY_RATES.getUrl());
         var httpResponse = restTemplate.exchange(CURRENCY_RATES.getUrl(), GET, prepareHttpRequest(), CurrencyIntegrationResponse.class);
         pairsKeeper.putNewPairsFromData(httpResponse.getBody().getQuotes());
     }
 
-    private HttpHeaders prepareHeadres() {
+    private HttpHeaders prepareHeaders() {
         var headers = new HttpHeaders();
         headers.add("apikey",apiKeyProperties.getKey());
         return headers;
     }
 
     private HttpEntity<?> prepareHttpRequest() {
-        return new HttpEntity<>(prepareHeadres());
+        return new HttpEntity<>(prepareHeaders());
     }
 }

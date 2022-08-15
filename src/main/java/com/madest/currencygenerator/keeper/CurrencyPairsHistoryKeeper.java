@@ -55,6 +55,9 @@ public class CurrencyPairsHistoryKeeper {
     @PostConstruct
     public void init() {
         currencyPairsHistoryMap = new ConcurrentHashMap<>();
+        putNewPairInfo("GBPRUB",new CurrencyPairInfo(LocalDateTime.now(),1.766));
+        putNewPairInfo("GBPUSD",new CurrencyPairInfo(LocalDateTime.now(),1.766));
+        putNewPairInfo("GBPEUR",new CurrencyPairInfo(LocalDateTime.now(),1.766));
     }
 
     public void setCurrencyPairsHistoryMap(Map<String, List<CurrencyPairInfo>> currencyPairsHistoryMap) {

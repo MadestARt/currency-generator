@@ -1,0 +1,22 @@
+spring:
+  config:
+    import: 'consul:'
+  cloud:
+    consul:
+      enabled: true
+      config:
+        enabled: true
+        format: YAML
+        watch:
+          wait-time: 15
+          delay: 5000 
+  application:
+    name: ${app.name}
+logging:
+  level:
+    root: DEBUG
+
+
+
+app:
+  name: currency-generator

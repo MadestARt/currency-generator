@@ -1,6 +1,6 @@
 spring:
   config:
-    import: 'consul:'
+    import: 'optional:consul:'
   cloud:
     consul:
       enabled: true
@@ -9,7 +9,7 @@ spring:
         format: YAML
         watch:
           wait-time: 15
-          delay: 5000 
+          delay: 5000
   application:
     name: ${app.name}
 logging:

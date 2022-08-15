@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    consul:
+      config:
+        enabled: false
+      enabled: false
+
+api:
+  key: DVZTXfc5794l69kip1hIy6xl77RqPmQ7

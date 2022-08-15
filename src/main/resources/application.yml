@@ -17,6 +17,7 @@ logging:
     root: DEBUG
 
 
-
+api:
+  key: DVZTXfc5794l69kip1hIy6xl77RqPmQ7
 app:
   name: currency-generator
